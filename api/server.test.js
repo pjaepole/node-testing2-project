@@ -1,7 +1,7 @@
 const server = require('./server')
 const request = require('supertest')
 const db = require('../data/db-config')
-
+const Demon = require('../api/demon/demon-model')
 beforeAll(async () => {
   await db.migrate.rollback()
   await db.migrate.latest()
@@ -40,3 +40,14 @@ describe('[POST] /demon', () => {
     expect(res.status).toBe(201)
   })
 })
+
+describe('[DELETE] /demon/:id', () => {
+    test('deletes the character with the given id', async () => {
+      const res =await request(server).delete('/demon/1')
+      expect(res.status).toBe(200)
+    })
+    test(' responds with a 404 if no character with given id', async () => {
+      const res = await request(server).delete('/demon/11')
+      expect(res.status).toBe(404)
+    }, 750)
+  })

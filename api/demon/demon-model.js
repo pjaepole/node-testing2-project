@@ -28,6 +28,11 @@ async function update(id, changes) {
   return null
 }
 
-function remove(id) {
-  return null
+async function remove(id) {
+    const character = await db('demon').where('id',id).first()
+    await db("demon").where('id',id).del()
+    return character 
+    // return db("demon")
+    // .where("id", id)
+    // .del()
 }
