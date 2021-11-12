@@ -1,12 +1,32 @@
 {
-  "name": "node-testing2-project",
+  "name": "testing2-project",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LambdaSchool/node-testing2-project.git"
+  },
+  "description": "For this project you will create a RESTful API using Node and Express, containing endpoints to perform some CRUD operations on a resource of your choosing. Two or three endpoints are enough. Data should be persisted in a SQLite database.",
+  "bugs": {
+    "url": "https://github.com/LambdaSchool/node-testing2-project/issues"
+  },
+  "homepage": "https://github.com/LambdaSchool/node-testing2-project#readme",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "eslint": "^8.2.0",
+    "jest": "^27.3.1",
+    "nodemon": "^2.0.15",
+    "supertest": "^6.1.6"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "knex": "^0.95.14",
+    "sqlite3": "^5.0.2"
   }
 }
